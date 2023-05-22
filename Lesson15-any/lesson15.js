@@ -1,0 +1,3 @@
+let name = 'giao' // string
+
+ 

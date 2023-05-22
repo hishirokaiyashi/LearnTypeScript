@@ -1,0 +1,72 @@
+**Type inference &&  type annotation
+- type inference: TS sẽ "đoán" kiểu dữ liệu dựa vào "thuật toán của nó"
+- type annotation: định nghĩa "ép buộc chính xác" kiểu dữ liệu.
+
+Khi nào sử dụng type inference (tự động gán type) khi nào muốn?
+Sử dụng type annotations(định nghĩa type) khi:
+- Khai báo 1 biến và gán giá trị cho nó ngay sau đó.
+- Khai báo 1 biến => ép kiểu (không muốn tự động gán)
+- Muốn ép kiểu trả về giá trị mong muốn
+
+** Lưu ý về chữ hoa && chữ thường của type:
+
+Ví dụ
+number && Number:
+-number: dùng 1 biến là kiểu dữ liệu nguyên thủy ( là con)
+-Number: khai báo 1 object như 1 class (là cha)
+
+** Dấu nháy đơn và nháy đôi
+//Giao và 'abc' -> "Giao và 'abc'"
+//Giao và "abc" -> "Giao và \"abc\""
+//Giao và
+"abc" 
+-> `Giao và "abc"`
+
+Mix type:
+ví dụ:
+- let test: (string | number)[] = ["giao",22]
+
+Tupe Types:
+- Hoạt động giống như Array. Tuy nhiên, có thêm một vài quy định bắt buộc.
+- Số phần tử của tuple cần được khai báo trước(cố định)
+- Type của từng phần tử trong array cần được khai báo trước và không nhất thiết phải giống nhau.
+- Ví dụ: let skills = ['language',5];
+=> let skill:[string,number]=['language',5];
+**Với Tupe thứ tự rất quan trọng
+**Với Tupe // OPTIONAL TUTPLE
+- let skill4: [boolean, string, number?]; // tham số cuối k có cũng đc
+- skill4 = [true, "string"]; // bỏ tham số cuối nè
+
+/*Enum (liệt kê,one by one) là nhóm các giá trị hằng số
+- Để định nghĩa enum:
+    + Sử dụng keyword enum và 'tên' cho enum.
+    + Định nghĩa các giá trị hằng số
+-> enum name {constant1, constant2};
+
+- Khác biệt giữa enum và constant
+=> 
+
+*/
+
+/* any -> dùng khi chuyển đổi dữ liệu js sang TS
+/* any -> API nhiều kiểu dữ liệu
+
+/*void -> vẫn trả ra kết quả nhưng là undefined
+/*never -> không trả ra kết quả kể cả undefined
+
+/* Sử dụng static thì không cần tạo object như class bth 
+
+/*Interface: 
++ Luôn bắt đầu = chữ hoa và sử dụng camelcase, tức là luôn viết hoa chữ cái đầu tiên của từng
+Ví dụ: Person, UserProfile,..
++ Ngoài ra, có thể bắt đầu bằng chữ I(viết tắt của Person) để cho tường Minh
+ví dụ IPerson, IUserProfile,..
+
+/* Khác nhau giữa Interface và Type:
+-Interface xu hướng OOP hơn type
+-Interface có thể cộng gộp các interface với nhau
+ví dụ:
+interface Point {x:number}
+interface Point {y:number}
+
+const Point: Point = {x:1,y:2}
